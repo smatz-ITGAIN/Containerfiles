@@ -14,4 +14,4 @@ spec:
   source:
     type: Git
     git:
-      uri: 'https://github.com/smatz-ITGAIN/spring-maven-example.git'
+      uri: 'https://github.com/smatz-ITGAIN/Containerfiles.git'
