@@ -1,0 +1,19 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: minio
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'minio:latest'
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: 'java:latest'
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/smatz-ITGAIN/spring-maven-example.git'
