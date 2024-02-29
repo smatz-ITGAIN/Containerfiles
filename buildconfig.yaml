@@ -9,6 +9,8 @@ spec:
       name: 'minio:latest'
   strategy:
     type: Docker
+    dockerStrategy:
+      dockerfilePath: Containerfile
   source:
     type: Git
     git:
