@@ -15,4 +15,4 @@ WORKDIR ~/minio
 
 RUN wget ${MINIO_RPM} -O minio.rpm && dnf -y install minio.rpm && rm minio.rpm
 
-CMD ["minio", "server", "~/minio", "--console-address", ":${CONSOLE_PORT}"]
+CMD ["minio", "server", "~/minio", "--console-address", ":$CONSOLE_PORT"]
