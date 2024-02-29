@@ -4,6 +4,9 @@ ARG MINIO_RPM=https://dl.min.io/server/minio/release/linux-amd64/archive/minio-2
 ARG CONSOLE_PORT=9001
 ARG API_PORT=9000
 
+ENV CONSOLE_PORT=${CONSOLE_PORT}
+ENV API_PORT=${API_PORT}
+
 EXPOSE ${CONSOLE_PORT}/tcp
 EXPOSE ${API_PORT}/tcp
 
@@ -15,4 +18,4 @@ WORKDIR ~/minio
 
 RUN wget ${MINIO_RPM} -O minio.rpm && dnf -y install minio.rpm && rm minio.rpm
 
-CMD ["minio", "server", "~/minio", "--console-address", ":$CONSOLE_PORT"]
+CMD ["minio", "server", "~/minio", "--console-address", ":${CONSOLE_PORT}"]
