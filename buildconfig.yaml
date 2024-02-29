@@ -8,11 +8,7 @@ spec:
       kind: ImageStreamTag
       name: 'minio:latest'
   strategy:
-    type: Source
-    sourceStrategy:
-      from:
-        kind: ImageStreamTag
-        name: 'java:latest'
+    type: Docker
   source:
     type: Git
     git:
